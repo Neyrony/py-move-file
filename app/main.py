@@ -1,5 +1,4 @@
 import os
-import posixpath
 
 
 def move_file(command: str) -> None:
