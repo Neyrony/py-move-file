@@ -9,10 +9,15 @@ def move_file(command: str) -> None:
     _, moved_file, destination_list = (command_list[0],
                                        command_list[1],
                                        command_list[2].split("/"))
+
+    if destination_list[-1].find(".txt") == -1:
+        destination_list.append(moved_file)
+
     path = ""
 
     for destination in range(len(destination_list) - 1):
         path += destination_list[destination] + "/"
+        # path = os.path.join(path, destination_list[destination])
         os.makedirs(path, exist_ok=True)
 
     with (
