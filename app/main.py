@@ -18,7 +18,7 @@ def move_file(command: str) -> None:
 
     for destination in range(len(destination_list) - 1):
         # path += destination_list[destination] + "/"
-        path = posixpath.join(path, destination_list[destination])
+        path = os.path.join(path, destination_list[destination])
         os.makedirs(path, exist_ok=True)
     if path:
         path += "/"
